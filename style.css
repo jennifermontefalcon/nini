@@ -1,97 +1,186 @@
-.navbar{
-    background-color: #fff;
-    height: 80px;
+body {
+    margin: 0;
+    background-color: #ffc8dd;
+    color: #FF69B4;
+    background-image: url('Layout-with-Logo/images/pink-bow.jpeg'); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 200px 1fr;
+    height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    height: 100px;
     margin: 20px;
     border-radius: 16px;
     padding: 0.5rem;
+    background-color: #ffc8dd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
 }
 
-.navbar-brand{
-    font-weight: 500;
-    color: #009970;
-    font-size: 24px;
-    transition: 0.3s color;
+.logo img {
+    height: 120px;
+    width: auto;
+    margin-left: 50px;
+    border-radius: 5px;
 }
 
-.login-button {
-    background-color: #009970;
-    color: #fff;
-    font-size: 14px;
-    padding: 8px 20px;
-    border-radius: 50px;
+.nav a {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #FF69B4;
     text-decoration: none;
-    transition: 0.3s background-color;
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.login-button:hover{
-    background-color: #00b383;
+.nav a:hover {
+    background-color: #e798b6; 
+    color: #fff; 
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-radius: 8px;
 }
 
-.navbar-toggler{
+.nav-toggler {
     border: none;
     font-size: 1.5rem;
 }
 
-.navbar-toggler:focus, .btn-close:focus{
+.nav-toggler:focus {
     box-shadow: none;
     outline: none;
 }
 
-.nav-link{
-    color: #666777;
-    font-weight: 500;
-    position: relative;
-}
-
-.nav-link:hover, .nav-link.active:hover{
-    color: #000;
-}
-
-@media (min-width: 991px){
-
-.nav-link::before{
-    content: "";
+.sidebar {
+    grid-area: sidebar;
+    background-color: #ffc8dd;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 20px;
+    width: 150px;
+    height: 180%; 
     position: absolute;
-    bottom: 0;
-    left: 50;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background-color: #009970;
-    visibility: hidden;
-    transition: 0.3s ease-in-out;
+    left: 0; 
+    top: 175px; 
 }
 
-.nav-link:hover::before, .nav-link.active:hover::before{
-    width: 100%;
-    visibility: visible;
+.sidebar:hover {
+    left: 0; 
 }
 
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.hero-section{
-    background: url(images/hero-bg.png) no-repeat center;
-    background-size: cover;
-    width: 100%;
+h1 {
+    color: #ff219b;
 }
 
-.hero-section::before{
-    background-color: rgba(0, 0, 0, 0.6);
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.sidebar ul li a {
+    color: #ff219b;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
 }
 
-.hero-section .container{
-    height: 100vh;
-    z-index: 1;
-    position: relative;
+.sidebar ul li a:hover {
+    background-color: #ff77bb;
+    color: #ffc3e1;
+    padding-left: 15px; 
+    border-radius: 5px;
 }
 
-.hero-section h1{
-    font-size: 1.5em;
+.main-content {
+    grid-area: main;
+    padding: 20px;
+}
+
+.content-text {
+    background-color: #e06e7f;
+    color: #ffc8dd;
+    font-size: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.images {
+    display: grid;
+    grid-template-rows: auto auto auto; 
+    gap: 20px; 
+}
+
+.top-row, .bottom-row {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+}
+
+.image-item {
+    text-align: center; 
+    font-weight: bold;
+}
+
+.image-item img {
+    max-width: 100%; 
+    height: 300px; 
+    width: 250px;
+}
+
+.image-item p {
+    margin-top: 10px;
+    color: #fff;
+    background-color: #FFB6C1;
+}
+
+.image-item:hover img {
+    transform: scale(1.1); 
+}
+
+.image-item:hover p {
+    opacity: 1; 
+}
+
+.footer-info {
+    display: inline-block;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #ffc8dd;
+    height: 180px;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-logo img {
+    height: 120px;
+    width: auto;
+}
+
+.designer-name, .email {
+    margin: 5px 0; 
 }
 
